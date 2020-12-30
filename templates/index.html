@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block title %} MCA Data
+{% endblock title %} 
+
+{% block body %}
+
+<div class="container text-center">
+     <h2> MCA Place Record | NIT Agartala </h2>
+    <form method="post" action="">
+     {% csrf_token %}
+    <div class="form-group text-center">
+    
+        <label for="Enroll">Enroll Number</label>
+        <input type="text"  class="form-control text-center" id="enroll" name="enroll" placeholder="Enter Enroll">
+        <small id="emailHelp" class="form-text text-muted">Search your Placement company data.</small>
+    </div>
+    <button type="submit" class="btn btn-primary col-sm-6">Submit</button>
+    </form>
+</div>
+
+{% comment %} <h2> {{enroll}}
+{{upcoming_data}} {% endcomment %}
+{% comment %} {% for x in upcoming_data %}
+    <p> {{ x[0] }} </p>
+{% endfor %} {% endcomment %}
+{% comment %} {{upcoming_data}} {% endcomment %}
+
+
+    {% for x in upcoming_data.Companies %} 
+        <h2>  {{x}}  </h2>
+    {% endfor %} 
+
+
+{% endblock body %} 
