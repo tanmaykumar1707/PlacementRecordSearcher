@@ -3,85 +3,118 @@
 {% endblock title %} 
 {% block body %}
 <br> <br>
+
+
 <div class="container">
     <div class="card text-white bg-info mb-12" style="">
     {% for x,v in student.items  %}
-        <div class="card-header">{{v.Name}} </div>
+        <div class="card-header"> <h5> {{v.Name}} </h5> </div>
         <div class="card-body">
-            <h5 class="card-title"> {{v.Name}}  Email:  {{ v.Email }}</h5>
+            <h5 class="card-title">  Email:  {{ v.Email }}  </h5>
             <p class="card-text">
-                {{ v.Enroll }} <br>
-            Mobile : {{ v.Mobile }}  <br>
-            Email:  {{ v.Email }} <br>
-            Date of Birth : {{ v.DOB }}  <br>
-            10th CGPA /%age : {{ v.10th }}  <br>
-            12th : {{ v.12th }}  <br>
-            Graduation : {{ v.Graduation }}  <br>
-            MCA CGPA : {{ v.5thCGPA }}  <br>
+               Enroll Number :  {{ v.Enroll }} <br>
+            
+            <div class="row text center">
+                    <div class="col-sm-6">
+                            Mobile : {{ v.Mobile }} 
+                    </div>
+                    <div class="col-sm-6">
+                            Date of Birth : {{ v.DOB }}
+                    </div>
+
+                    <div class="col-sm-6">
+                              10th CGPA /%age : {{ v.10th }}
+                    </div>
+                    <div class="col-sm-6">
+                               12th : {{ v.12th }}
+                    </div>
+                    <div class="col-sm-6">
+                               Graduation : {{ v.Graduation }}
+                    </div>
+                    <div class="col-sm-6">
+                               MCA CGPA : {{ v.5thCGPA }}
+                    </div>
+            </div>
             </p>
         </div>
     {% endfor %} 
     </div>
 </div>
+ <br>
+  <br>
+    <hr>
+     <br>
+<h5 class="text-primmary text-center"> The following date is for {{enroll}} Only! </h5>
 
-<div class="container col-sm-4">
-<h4 class="text-primmary text-center"> Data for {{enroll}}  </h2>
 
-    <div class="col-sm-12 card border-primary center">
-        <h2 class="text-primary">Upcoming Drive</h2>
-        <hr>
-        {% for x,v in upcoming_data.items  %}
-        <div class="row col-sm-12">
-        <h5>  {{v.Companies}}
-                ({{ v.Status }})
-          </h5>
-          <br>
-        <p> Test Date : {{ v.test_date }}  <br>
-          Important Date:  {{ v.imp_date }} </p>
+<div class="container">
+    <div class="row "> 
+        <div class="card border-primary col-sm-12 mx-md-1 px-md-2 "  >
+            <h3 class="text-primary text-center">Upcoming Drive</h3>
+                <div class="row justify-content-center">
+                    {% for x,v in upcoming_data.items  %}
+                        <div class="card text-white bg-dark mb-3 mx-md-2 px-md-2 " style="max-width: 18rem; min-width: 18rem;">
+                        <div class="card-header"><h5> {{v.Companies}} </h5> </div>
+                        <div class="card-body">
+                            <h6 class="card-title"> Test Date : {{ v.test_date }} </h6>
+                            <p class="card-text">
+                                Test Date : {{ v.test_date }}  <br>
+                                Important Date:  {{ v.imp_date }} 
+                            </p>
+                        </div>
+                        </div>
+                    {% endfor %} 
+                </div>
+    </div>
 
+    <br>
+   
+
+    <div class="row "> 
+        <div class="card border-primary col-sm-12 mx-md-1 px-md-2 "  >
+            <h3 class="text-primary text-center">Running Drive</h3>
+            <p> Interview or Result Pending  </p>
+                <div class="row justify-content-center">
+                    {% for x,v in running.items  %}
+                        <div class="card text-white bg-dark mb-3 mx-md-2 px-md-2 " style="max-width: 18rem; min-width: 18rem;">
+                        <div class="card-header"><h5> {{v.Companies}} </h5> </div>
+                        <div class="card-body">
+                            <h6 class="card-title"> Test Date : {{ v.test_date }} </h6>
+                            <p class="card-text">
+                                Test Date : {{ v.test_date }}  <br>
+                                Important Date:  {{ v.imp_date }} 
+                            </p>
+                        </div>
+                        </div>
+                    {% endfor %} 
+                </div>
+    </div>
+
+    <hr>
+
+    <div class="row "> 
+        <div class="card border-primary col-sm-12 mx-md-1 px-md-2 "  >
+            <h3 class="text-primary text-center">Completed Drive</h3>
+                <div class="row justify-content-center">
+                    {% for x,v in completed.items  %}
+                        <div class="card text-white bg-dark mb-3 mx-md-2 px-md-2 " style="max-width: 18rem; min-width: 18rem;">
+                        <div class="card-header"><h5> {{v.Companies}} </h5> </div>
+                        <div class="card-body">
+                            <h6 class="card-title"> Test Date : {{ v.test_date }} </h6>
+                            <p class="card-text">
+                                Test Date : {{ v.test_date }}  <br>
+                                Important Date:  {{ v.imp_date }} 
+                            </p>
+                        </div>
+                        </div>
+                    {% endfor %} 
+                </div>
         </div>
-         <hr>
-         <br>
-        {% endfor %} 
     </div>
-    </div>
-    <div class="container col-sm-4">
-     <div class="col-sm-12 card border-primary center">
-        <h2 class="text-primary">Running Drive</h2>
-        <hr>
-        {% for x,v in running.items  %}
-        <div class="row col-sm-12">
-        <h5>  {{v.Companies}}
-                ({{ v.Status }})
-          </h5>
-          <br>
-        <p> Test Date : {{ v.test_date }}  <br>
-          Important Date:  {{ v.imp_date }} </p>
-
-        </div>
-         <hr>
-         <br>
-        {% endfor %} 
-    </div>
-    </div>
-    <div class="container col-sm-4">
-     <div class="col-sm-12 card border-primary center">
-        <h2 class="text-primary">Completed Drive</h2>
-        <hr>
-        {% for x,v in completed.items  %}
-        <div class="row col-sm-12">
-        <h5>  {{v.Companies}}
-                ({{ v.Status }})
-          </h5>
-          <br>
-        <p> Test Date : {{ v.test_date }}  <br>
-          Important Date:  {{ v.imp_date }} </p>
-
-        </div>
-         <hr>
-         <br>
-        {% endfor %} 
-    </div>
+    {% comment %} Row End {% endcomment %}
 </div>
+{% comment %} container End {% endcomment %}
+
+    
 
 {% endblock body %} 
