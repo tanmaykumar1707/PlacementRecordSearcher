@@ -1,94 +1,23 @@
 {% extends 'base.html' %}
-
-
 {% block title %} MCA Data
 {% endblock title %} 
-
 {% block body %}
 
+<br> <br> <br>
+<hr>
 <div class="container text-center">
-     <h2> MCA Place Record | NIT Agartala </h2>
-    <form method="post" action="">
+     <h2> MCA Placement Record | NIT Agartala </h2>
+    <form method="post" action="/data">
      {% csrf_token %}
     <div class="form-group text-center">
     
-        <label for="Enroll">Enroll Number</label>
+       
         <input type="text"  class="form-control text-center" id="enroll" name="enroll" placeholder="Enter Enroll">
-        <small id="emailHelp" class="form-text text-muted">Search your Placement company data.</small>
+        <small id="emailHelp" class="form-text text-muted">Search your On Campus Placement Record.</small>
     </div>
-    <button type="submit" class="btn btn-primary col-sm-6">Submit</button>
+    <button type="submit" class="btn btn-primary col-sm-6">Search</button>
     </form>
 </div>
-
-
-<div class="container col-sm-4">
-<h4 class="text-primmary text-center"> Data for {{enroll}}  </h2>
-
-    <div class="col-sm-12 card border-primary center">
-        <h2 class="text-primary">Upcoming Drive</h2>
-        <hr>
-        {% for x,v in upcoming_data.items  %}
-        <div class="row col-sm-12">
-        <h5>  {{v.Companies}}
-                ({{ v.Status }})
-          </h5>
-          <br>
-        <p> Test Date : {{ v.test_date }}  <br>
-          Important Date:  {{ v.imp_date }} </p>
-
-        </div>
-         <hr>
-         <br>
-        {% endfor %} 
-    </div>
-    </div>
-    <div class="container col-sm-4">
-     <div class="col-sm-12 card border-primary center">
-        <h2 class="text-primary">Running Drive</h2>
-        <hr>
-        {% for x,v in running.items  %}
-        <div class="row col-sm-12">
-        <h5>  {{v.Companies}}
-                ({{ v.Status }})
-          </h5>
-          <br>
-        <p> Test Date : {{ v.test_date }}  <br>
-          Important Date:  {{ v.imp_date }} </p>
-
-        </div>
-         <hr>
-         <br>
-        {% endfor %} 
-    </div>
-    </div>
-    <div class="container col-sm-4">
-     <div class="col-sm-12 card border-primary center">
-        <h2 class="text-primary">Completed Drive</h2>
-        <hr>
-        {% for x,v in completed.items  %}
-        <div class="row col-sm-12">
-        <h5>  {{v.Companies}}
-                ({{ v.Status }})
-          </h5>
-          <br>
-        <p> Test Date : {{ v.test_date }}  <br>
-          Important Date:  {{ v.imp_date }} </p>
-
-        </div>
-         <hr>
-         <br>
-        {% endfor %} 
-    </div>
-        
-
- 
-
-</div>
-
-
-   
-       
- 
-
+<hr>
 
 {% endblock body %} 

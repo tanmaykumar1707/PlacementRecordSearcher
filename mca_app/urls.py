@@ -19,6 +19,7 @@ from mca_app import views
 
 urlpatterns = [
     path("",views.index, name='home' ),
-    path("about",views.about,name="about")
+    path("about",views.about,name="about"),
+    path("data",views.data,name="data")
     
 ]
