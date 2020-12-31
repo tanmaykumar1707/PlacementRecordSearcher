@@ -20,17 +20,75 @@
     </form>
 </div>
 
-{% comment %} <h2> {{enroll}}
-{{upcoming_data}} {% endcomment %}
-{% comment %} {% for x in upcoming_data %}
-    <p> {{ x[0] }} </p>
-{% endfor %} {% endcomment %}
-{% comment %} {{upcoming_data}} {% endcomment %}
+
+<div class="container col-sm-4">
+<h4 class="text-primmary text-center"> Data for {{enroll}}  </h2>
+
+    <div class="col-sm-12 card border-primary center">
+        <h2 class="text-primary">Upcoming Drive</h2>
+        <hr>
+        {% for x,v in upcoming_data.items  %}
+        <div class="row col-sm-12">
+        <h5>  {{v.Companies}}
+                ({{ v.Status }})
+          </h5>
+          <br>
+        <p> Test Date : {{ v.test_date }}  <br>
+          Important Date:  {{ v.imp_date }} </p>
+
+        </div>
+         <hr>
+         <br>
+        {% endfor %} 
+    </div>
+    </div>
+    <div class="container col-sm-4">
+     <div class="col-sm-12 card border-primary center">
+        <h2 class="text-primary">Running Drive</h2>
+        <hr>
+        {% for x,v in running.items  %}
+        <div class="row col-sm-12">
+        <h5>  {{v.Companies}}
+                ({{ v.Status }})
+          </h5>
+          <br>
+        <p> Test Date : {{ v.test_date }}  <br>
+          Important Date:  {{ v.imp_date }} </p>
+
+        </div>
+         <hr>
+         <br>
+        {% endfor %} 
+    </div>
+    </div>
+    <div class="container col-sm-4">
+     <div class="col-sm-12 card border-primary center">
+        <h2 class="text-primary">Completed Drive</h2>
+        <hr>
+        {% for x,v in completed.items  %}
+        <div class="row col-sm-12">
+        <h5>  {{v.Companies}}
+                ({{ v.Status }})
+          </h5>
+          <br>
+        <p> Test Date : {{ v.test_date }}  <br>
+          Important Date:  {{ v.imp_date }} </p>
+
+        </div>
+         <hr>
+         <br>
+        {% endfor %} 
+    </div>
+        
+
+ 
+
+</div>
 
 
-    {% for x in upcoming_data.Companies %} 
-        <h2>  {{x}}  </h2>
-    {% endfor %} 
+   
+       
+ 
 
 
 {% endblock body %} 

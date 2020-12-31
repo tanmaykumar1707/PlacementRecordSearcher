@@ -30,13 +30,18 @@ def index(request):
             for x in comp_list:
                 temp=comp[comp.c_id==x]
                 eli_df=eli_df.append(temp)
-            x=eli_df[eli_df.current_status=="upcoming"]
+            x=eli_df[eli_df.iloc[:,7]=="upcoming"]
+            y=eli_df[eli_df.iloc[:,7]=="running"]
+            z=eli_df[eli_df.iloc[:,7]=="completed"]
+            print(x)
             shape = x.shape
             print(shape[0])
             conext ={
             "enroll":request.POST["enroll"],
-            "upcoming_data":x.infer_objects(),
-            "upcoming_no":range(shape[0])
+            "upcoming_data":x.transpose().to_dict(),
+            "running":y.transpose().to_dict(),
+            "completed":z.transpose().to_dict()
+
             }
         else:
             print("Nothing Found")
