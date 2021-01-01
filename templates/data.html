@@ -12,7 +12,7 @@
         <div class="card-body">
             <h5 class="card-title">  Email:  {{ v.Email }}  </h5>
             <p class="card-text">
-               Enroll Number :  {{ v.Enroll }} <br>
+               Enroll Number :  {{ v.Enroll }} 
             
             <div class="row text center">
                     <div class="col-sm-6">
@@ -40,17 +40,17 @@
     {% endfor %} 
     </div>
 </div>
- <br>
-  <br>
-    <hr>
-     <br>
-<h5 class="text-primmary text-center"> The following date is for {{enroll}} Only! </h5>
+
+
+ <br><br><hr><br>
+
 
 
 <div class="container">
-    <div class="row "> 
+    <h5 class="text-primmary text-center"> The following date is for {{enroll}} Only! </h5>
+    <div class="row col-sm-12"> 
         <div class="card border-primary col-sm-12 mx-md-1 px-md-2 "  >
-            <h3 class="text-primary text-center">Upcoming Drive</h3>
+            <h4 class="text-primary text-center">Upcoming Drive</h4> <br>
                 <div class="row justify-content-center">
                     {% for x,v in upcoming_data.items  %}
                         <div class="card text-white bg-dark mb-3 mx-md-2 px-md-2 " style="max-width: 18rem; min-width: 18rem;">
@@ -65,38 +65,20 @@
                         </div>
                     {% endfor %} 
                 </div>
+        </div>
     </div>
+</div>
 
-    <br>
+    <br><br>
    
-
-    <div class="row "> 
+<div class="container">
+    <div class="row col-sm-12"> 
         <div class="card border-primary col-sm-12 mx-md-1 px-md-2 "  >
-            <h3 class="text-primary text-center">Running Drive</h3>
+            <h4 class="text-danger text-center">Running Drive</h4> <br>
            
                 <div class="row justify-content-center">
                     {% for x,v in running.items  %}
-                        <div class="card text-white bg-dark mb-3 mx-md-2 px-md-2 " style="max-width: 18rem; min-width: 18rem;">
-                        <div class="card-header"><h5> {{v.Companies}} </h5> </div>
-                        <div class="card-body">
-                            <h6 class="card-title"> Test Date : {{ v.test_date }} </h6>
-                            <p class="card-text">
-                                Test Date : {{ v.test_date }}  <br>
-                                Important Date:  {{ v.imp_date }} 
-                            </p>
-                        </div>
-                        </div>
-                    {% endfor %} 
-                </div>
-    </div>
-  <br>
-
-    <div class="row "> 
-        <div class="card border-primary col-sm-12 mx-md-1 px-md-2 "  >
-            <h3 class="text-primary text-center">Completed Drive</h3>
-                <div class="row justify-content-center">
-                    {% for x,v in completed.items  %}
-                        <div class="card text-white bg-dark mb-3 mx-md-2 px-md-2 " style="max-width: 18rem; min-width: 18rem;">
+                        <div class="card text-white bg-danger mb-3 mx-md-2 px-md-2 " style="max-width: 18rem; min-width: 18rem;">
                         <div class="card-header"><h5> {{v.Companies}} </h5> </div>
                         <div class="card-body">
                             <h6 class="card-title"> Test Date : {{ v.test_date }} </h6>
@@ -109,6 +91,32 @@
                     {% endfor %} 
                 </div>
         </div>
+    </div>
+</div>
+
+
+  <br><br>
+
+
+<div class="container">
+    <div class="row col-sm-12"> 
+        <div class="card border-primary col-sm-12 mx-md-1 px-md-2 "  >
+            <h4 class="text-info text-center">Completed Drive</h4> <br>
+                <div class="row justify-content-center">
+                    {% for x,v in completed.items  %}
+                        <div class="card text-white  bg-success mb-3 mx-md-2 px-md-2 " style="max-width: 18rem; min-width: 18rem;">
+                        <div class="card-header"><h5> {{v.Companies}} </h5> </div>
+                        <div class="card-body">
+                            <h6 class="card-title"> Test Date : {{ v.test_date }} </h6>
+                            <p class="card-text">
+                                Test Date : {{ v.test_date }}  <br>
+                                Important Date:  {{ v.imp_date }} 
+                            </p>
+                        </div>
+                        </div>
+                    {% endfor %} 
+                </div>
+          </div>
     </div>
     {% comment %} Row End {% endcomment %}
 </div>
