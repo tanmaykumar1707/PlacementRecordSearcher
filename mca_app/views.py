@@ -6,7 +6,8 @@ def index(request):
     return render(request,'index.html')
 
 def about(request):
-    return HttpResponse("This is about  page")
+    # return HttpResponse("This is about  page")
+    return render(request,'about.html')
 
 
 def data(request):
